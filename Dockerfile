@@ -10,6 +10,10 @@ RUN wget https://abrok.eu/stockfish/latest/linux/stockfish_x64_bmi2.zip -O stock
 RUN unzip stockfish.zip && rm stockfish.zip
 RUN mv stockfish_* engines/stockfish && chmod +x engines/stockfish
 
+#books
+RUN wget -U "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36" --no-check-certificate "https://onedrive.live.com/download?cid=547CCA53C39C1EA1&resid=547CCA53C39C1EA1%21599&authkey=AMLXM4n_ZwOk7VQ" -O cubail.7z
+RUN 7z e cubail.7z && rm cubail.7z
+
 # Fairy-Stockfish - Depending on your CPU it may be necessary to pick a binary other than bmi2
 # To use Fairy-Stockfish, uncomment the following lines and adjust config.yml.default accordingly
   RUN wget https://github.com/ianfab/Fairy-Stockfish/releases/download/fairy_sf_14_0_1_xq/fairy-stockfish-largeboard_x86-64-bmi2
